@@ -1,0 +1,257 @@
+/* ===== HERO ENTRANCE ===== */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.08); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(232,201,122,0); border-color: rgba(232,201,122,0.15); }
+  50%       { box-shadow: 0 0 20px rgba(232,201,122,0.15); border-color: rgba(232,201,122,0.35); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== HERO CONTENT ===== */
+.hero-content > * { animation: heroFadeUp 0.9s ease both; }
+.hero-content .hero-badge      { animation-delay: 0.2s; }
+.hero-content .hero-title      { animation-delay: 0.4s; }
+.hero-content .hero-tagline    { animation-delay: 0.6s; }
+.hero-content .hero-actions    { animation-delay: 0.8s; }
+.hero-content .hero-stats      { animation-delay: 1.0s; }
+
+.hero-scroll { animation: scrollBounce 2s ease infinite; }
+
+.ambient-orb { animation: glowPulse 6s ease infinite; }
+.ambient-orb:nth-child(2) { animation-delay: 3s; }
+
+/* ===== FLOATING ELEMENTS ===== */
+.float-element { animation: float 6s ease-in-out infinite; }
+.float-element:nth-child(2) { animation-delay: 2s; }
+.float-element:nth-child(3) { animation-delay: 4s; }
+
+/* ===== SKILL BAR ===== */
+.skill-bar-fill {
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-bar-fill.animate { width: var(--skill-width); }
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(232,201,122,0.1);
+}
+
+.project-card-img {
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.project-card-img img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-card-img img { transform: scale(1.06); }
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.95));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.project-card:hover .project-card-overlay { opacity: 1; }
+
+/* ===== TIMELINE ===== */
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== CONTACT FORM ===== */
+.form-group input,
+.form-group textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(232,201,122,0.5);
+  box-shadow: 0 0 0 3px rgba(232,201,122,0.08), 0 0 20px rgba(232,201,122,0.06);
+  background: rgba(232,201,122,0.03);
+  outline: none;
+}
+
+/* ===== SUBMIT BUTTON PULSE ===== */
+.btn-submit:not(:disabled)::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-submit:not(:disabled):hover::after { opacity: 0.5; filter: blur(8px); }
+
+/* ===== CARD SHIMMER EFFECT ===== */
+.shimmer-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(232,201,122,0.05), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shimmer-card:hover::before { left: 160%; }
+
+/* ===== NAV ENTRANCE ===== */
+.nav { animation: heroFadeIn 0.6s ease 1.6s both; }
+
+/* ===== TAG HOVER ===== */
+.tech-tag {
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(232,201,122,0.15);
+  border-color: rgba(232,201,122,0.4);
+  color: var(--gold-light);
+}
+
+/* ===== STAT COUNTER ===== */
+.stat-number { animation: countUp 0.6s ease both; }
+
+/* ===== GLOW LINE ===== */
+.glow-line {
+  position: relative;
+}
+
+.glow-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), transparent);
+  filter: blur(1px);
+}
+
+/* ===== PAGE TRANSITION ===== */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 9990;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.page-transition-overlay.active { opacity: 1; pointer-events: all; }
+
+/* ===== FILTER BUTTON ===== */
+.filter-btn {
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.filter-btn:hover { transform: translateY(-2px); }
+.filter-btn.active { transform: translateY(-2px); }
+
+/* ===== SOCIAL LINK ===== */
+.social-link {
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232,201,122,0.4);
+  color: var(--gold);
+  box-shadow: 0 8px 24px rgba(232,201,122,0.1);
+}
+
+/* ===== SKILL CARD HOVER ===== */
+.skill-card {
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(232,201,122,0.2);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(232,201,122,0.06);
+}

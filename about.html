@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — SHAIK MUZAMMIL</title>
+  <meta name="description" content="A bit about me — SHAIK MUZAMMIL, CS student and frontend developer from Guntur, India." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">SM</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">SHAIK MUZAMMIL</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">
+      <span>Say Hello</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </a>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="position:relative;overflow:hidden;">
+    <div class="ambient-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(232,201,122,0.07),transparent 70%);top:-20%;right:-10%;"></div>
+    <div class="container">
+      <div class="section-label" style="justify-content:center;">A bit about me</div>
+      <h1 class="section-title" style="font-size:clamp(3rem,7vw,5.5rem);text-align:center;">Just a student<br/>who loves <span class="text-gold">building</span></h1>
+      <p class="section-subtitle" style="margin:0 auto;text-align:center;">Self-taught developer from Guntur, Andhra Pradesh, India.</p>
+    </div>
+  </section>
+
+  <div class="divider" style="margin:0;"></div>
+
+  <!-- ABOUT GRID -->
+  <section class="about-section" style="padding:100px 0;">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Visual / Avatar -->
+        <div class="about-visual reveal">
+          <div class="avatar-frame glass-card shimmer-card" style="padding:3px;border-radius:24px;max-width:420px;">
+            <div style="border-radius:22px;aspect-ratio:3/4;overflow:hidden;">
+              <img src="images/me.jpg" alt="Shaik Muzammil" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            </div>
+          </div>
+          <!-- About stats -->
+          <div class="about-stats">
+            <div class="about-stat-card glass-card">
+              <div class="about-stat-num text-gold" data-count="9">0</div>
+              <div class="about-stat-label">Projects Built</div>
+            </div>
+            <div class="about-stat-card glass-card">
+              <div class="about-stat-num text-gold" data-count="1">0</div>
+              <div class="about-stat-label">Year of Learning</div>
+            </div>
+            <div class="about-stat-card glass-card">
+              <div class="about-stat-num text-gold" data-count="5">0</div>
+              <div class="about-stat-label">Technologies</div>
+            </div>
+            <div class="about-stat-card glass-card">
+              <div class="about-stat-num text-gold" data-count="100">0</div>
+              <div class="about-stat-label">% Self-Taught</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio Text -->
+        <div class="about-text reveal reveal-delay-2">
+          <div class="section-label">Who I am</div>
+          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);">Learning by <span class="text-gold">doing</span>.</h2>
+          <div class="bio-paragraphs">
+            <p>Hey! I'm Shaik Muzammil — a student developer from Guntur, India who got into coding about a year ago and hasn't looked back since. I mostly self-taught myself through YouTube, documentation, and just breaking things and figuring out how to fix them.</p>
+            <p>In the past year I've built 9 projects ranging from silly satirical websites to more serious apps like a digital library. Each one was a learning experience — some went well, some were messy, but all of them taught me something I didn't know before.</p>
+            <p>Right now I'm focused on getting better at JavaScript and React, improving my eye for design.If that sounds like your team, feel free to reach out!</p>
+          </div>
+          <div style="display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;">
+            <a href="contact.html" class="btn-primary magnetic">
+              <span>Say Hello</span>
+            </a>
+            <a href="projects.html" class="btn-outline magnetic">
+              <span>See My Work</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- JOURNEY SECTION -->
+  <section class="timeline-section" style="padding:80px 0 120px;">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:64px;">
+        <div class="section-label">My Journey</div>
+        <h2 class="section-title">How I <span class="text-gold">Got Here</span></h2>
+        <p class="section-subtitle">A year of learning, building, and figuring things out.</p>
+      </div>
+
+      <div class="timeline-line"></div>
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card shimmer-card">
+            <div class="timeline-year">Early 2026</div>
+            <h3 class="timeline-role">Building More Complex Projects</h3>
+            <div class="timeline-company">Self-directed Learning</div>
+            <p class="timeline-desc">Started tackling more ambitious ideas — multi-page apps, Firebase integration, and experimenting with animations. This is where I built the Solo Leveling projects and the Hollow Purple Simulator.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">CSS Animations</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card shimmer-card">
+            <div class="timeline-year">Mid 2025</div>
+            <h3 class="timeline-role">First Real Projects</h3>
+            <div class="timeline-company">Learning in Public</div>
+            <p class="timeline-desc">Built my first projects I was actually proud of — Soul Library v1.0 and Soul Canvas. Started deploying to Netlify and sharing work online. Got way more comfortable with CSS layouts and JavaScript DOM manipulation.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Netlify</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card shimmer-card">
+            <div class="timeline-year">Late 2025</div>
+            <h3 class="timeline-role">Started Learning Web Dev</h3>
+            <div class="timeline-company">YouTube + MDN Docs + Trial &amp; Error</div>
+            <p class="timeline-desc">Picked up HTML and CSS by watching tutorials and copying designs I liked. Wrote my first JavaScript — mostly just making buttons do things. Made a lot of ugly websites that never saw the light of day.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">Basic JS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card shimmer-card">
+            <div class="timeline-year">Currently</div>
+            <h3 class="timeline-role">Inter 2nd year Student (Ongoing)</h3>
+            <div class="timeline-company">Guntur, Andhra Pradesh</div>
+            <p class="timeline-desc">Studying 12th while building projects on the side. Currently exploring static developing more deeply, brushing up on data structures, and looking for opportunities to contribute to real-world projects.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML,CSS and JS</span>
+              <span class="tech-tag">Profound JS</span>
+              <span class="tech-tag">Advanced Static animations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- VALUES SECTION -->
+  <section class="about-philosophy" style="padding:80px 0 120px;">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;margin-bottom:64px;">
+        <div class="section-label" style="justify-content:center;">How I Think</div>
+        <h2 class="section-title">Things I <span class="text-gold">Believe</span></h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card glass-card shimmer-card reveal reveal-delay-1">
+          <div class="value-number text-gold">01</div>
+          <h3 class="value-title">Build Things, Don't Just Watch</h3>
+          <p class="value-desc">Tutorials are great for a while, but you only really learn by building your own stuff and breaking it. Most of what I know came from making something and debugging it.</p>
+        </div>
+        <div class="value-card glass-card shimmer-card reveal reveal-delay-2">
+          <div class="value-number text-gold">02</div>
+          <h3 class="value-title">Be Honest About What You Don't Know</h3>
+          <p class="value-desc">I'm a student. I don't know everything, and that's fine. Pretending otherwise just wastes everyone's time. I'd rather ask a question and learn than fake it.</p>
+        </div>
+        <div class="value-card glass-card shimmer-card reveal reveal-delay-3">
+          <div class="value-number text-gold">03</div>
+          <h3 class="value-title">Ship It, Then Improve</h3>
+          <p class="value-desc">Waiting for something to be perfect before sharing it means you never ship anything. I'd rather get it out there, get feedback, and make it better over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">SM</div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 SHAIK MUZAMMIL. Built while still learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <div class="page-transition-overlay"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

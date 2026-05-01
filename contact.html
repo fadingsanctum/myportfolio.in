@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — SHAIK MUZAMMIL</title>
+  <meta name="description" content="Get in touch with Shaik Muzammil — student developer from Guntur, India." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-info { position: sticky; top: calc(var(--nav-height) + 32px); }
+
+    .contact-email-block {
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 24px;
+    }
+
+    .contact-email-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--white-30);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .contact-email-addr {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--gold);
+      word-break: break-all;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .contact-email-addr:hover { opacity: 0.8; }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(72, 199, 116, 0.1);
+      border: 1px solid rgba(72, 199, 116, 0.25);
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #48C774;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #48C774;
+      animation: glowPulse 2s ease infinite;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      color: var(--white-60);
+      font-size: 0.88rem;
+      font-weight: 400;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      color: var(--gold);
+      border-color: var(--glass-border-gold);
+      transform: translateX(6px);
+      box-shadow: 0 4px 20px rgba(232,201,122,0.08);
+    }
+
+    .social-link-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white-5);
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+
+    .social-link:hover .social-link-icon { background: var(--gold-dim); }
+
+    .social-link-arrow {
+      margin-left: auto;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: var(--transition);
+      color: var(--gold);
+    }
+
+    .social-link:hover .social-link-arrow { opacity: 1; transform: translateX(0); }
+
+    .contact-form-wrap { padding: 48px; border-radius: var(--radius-xl); }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--white-30);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      transition: var(--transition);
+    }
+
+    .form-group:focus-within label { color: var(--gold); }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--white-5);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.6;
+      transition: var(--transition);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--white-30); }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: rgba(232,201,122,0.4);
+      background: rgba(232,201,122,0.03);
+      box-shadow: 0 0 0 3px rgba(232,201,122,0.06);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E8C97A' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: none;
+    }
+
+    .form-group select option { background: #111; color: var(--white); }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      border: none;
+      border-radius: 100px;
+      color: #000;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,201,122,0.35); }
+    .btn-submit:hover:not(:disabled)::before { opacity: 1; }
+    .btn-submit span { position: relative; z-index: 1; }
+    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    .char-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--white-30);
+      pointer-events: none;
+    }
+
+    .contact-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--glass-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .contact-meta-item { padding: 20px; background: var(--bg-secondary); text-align: center; }
+
+    .contact-meta-value {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-meta-key {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--white-30);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .form-success { display: none; text-align: center; padding: 48px 32px; }
+    .form-success.show { display: block; }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(72,199,116,0.1);
+      border: 1px solid rgba(72,199,116,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: #48C774;
+    }
+
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-info { position: static; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 28px 20px; }
+      .contact-meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <div class="loader-logo">SM</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">SHAIK MUZAMMIL</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">
+      <span>Say Hello</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </a>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="position:relative;overflow:hidden;text-align:center;">
+    <div class="ambient-orb" style="width:700px;height:700px;background:radial-gradient(circle,rgba(232,201,122,0.06),transparent 70%);top:-30%;left:50%;transform:translateX(-50%);"></div>
+    <div class="container">
+      <div class="availability-badge" style="margin:0 auto 24px;">
+        <div class="avail-dot"></div>
+        Open for collaborations
+      </div>
+      <div class="section-label" style="justify-content:center;">Get In Touch</div>
+      <h1 class="section-title" style="font-size:clamp(3rem,7vw,5.5rem);">Let's <span class="text-gold">Connect</span></h1>
+      <p class="section-subtitle" style="margin:0 auto;text-align:center;">Whether you want to collaborate, give feedback on my work, or just say hi.</p>
+    </div>
+  </section>
+
+  <div class="divider" style="margin:0 0 80px;"></div>
+
+  <!-- CONTACT CONTENT -->
+  <section style="padding:0 0 120px;">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="contact-info reveal">
+
+          <div class="contact-meta">
+            <div class="contact-meta-item">
+              <div class="contact-meta-value">24–48h</div>
+              <div class="contact-meta-key">Response Time</div>
+            </div>
+            <div class="contact-meta-item">
+              <div class="contact-meta-value">IST</div>
+              <div class="contact-meta-key">Timezone</div>
+            </div>
+            <div class="contact-meta-item">
+              <div class="contact-meta-value">India</div>
+              <div class="contact-meta-key">Location</div>
+            </div>
+          </div>
+
+          <div class="contact-email-block glass-card">
+            <div class="contact-email-label">Email me directly</div>
+            <a href="mailto:shaikameen1888@gmail.com" class="contact-email-addr">shaikameen1888@gmail.com</a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/fadingsanctum" class="social-link" target="_blank" rel="noopener">
+              <div class="social-link-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span>GitHub</span>
+              <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--white-30);margin-left:auto;margin-right:8px;">My Github</span>
+              <div class="social-link-arrow">→</div>
+            </a>
+            <a href="https://youtube.com/@soul_lifestyle0900?si=8UN2yScoJnTYmyo4" class="social-link" target="_blank" rel="noopener">
+              <div class="social-link-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span>YouTube</span>
+              <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--white-30);margin-left:auto;margin-right:8px;">My Youtube</span>
+              <div class="social-link-arrow">→</div>
+            </a>
+            <a href="https://youtube.com/@lumaeditz0?si=toRa9nSGyKmAnlpv" class="social-link" target="_blank" rel="noopener">
+              <div class="social-link-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span>YouTube-2</span>
+              <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--white-30);margin-left:auto;margin-right:8px;">My 2nd Youtube</span>
+              <div class="social-link-arrow">→</div>
+            </a>
+            <a href="https://www.fiverr.com/shaik_muzammil0/buying?source=avatar_menu_profile" class="social-link" target="_blank" rel="noopener">
+              <div class="social-link-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 9.24h-2.13c-2.31 0-3.84 1.39-3.84 3.86v7.65h-4.08V9.24h-1.96V5.92h1.96V4.64C13 2.09 14.35 1 16.93 1h2.12v3.32h-1.38c-.87 0-1.12.35-1.12 1.06v.54h2.5l-.43 3.32H16.55v7.51h-4.6V9.24H9.88V5.92h2.07V4.08c0-2.35 1.04-3.39 3.37-3.39H23v8.55zM4.11 5.54c-1.34 0-2.2-.79-2.2-2.04S2.77 1.5 4.11 1.5s2.2.79 2.2 2S5.44 5.54 4.11 5.54zM2.07 7.07h4.08v9.68H2.07z"/></svg>
+              </div>
+              <span>Fiverr</span>
+              <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--white-30);margin-left:auto;margin-right:8px;">My Fiverr</span>
+              <div class="social-link-arrow">→</div>
+            </a>
+            <a href="https://www.instagram.com/sane_being/" class="social-link" target="_blank" rel="noopener">
+              <div class="social-link-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <span>Instagram</span>
+              <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--white-30);margin-left:auto;margin-right:8px;">My Instagram</span>
+              <div class="social-link-arrow">→</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="contact-form-wrap glass-card shimmer-card reveal reveal-delay-2">
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14l7 7L23 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;">Message Sent!</h3>
+            <p style="color:var(--white-60);font-size:0.95rem;margin-bottom:28px;">Thanks for reaching out — I'll reply as soon as I can, usually within a day or two.</p>
+            <button onclick="resetForm()" class="btn-outline" style="margin:0 auto;display:inline-flex;"><span>Send Another</span></button>
+          </div>
+
+<form 
+  class="contact-form"
+  id="contactForm"
+  action="https://formspree.io/f/xojygbdr"
+  method="POST"
+>
+  
+  <input type="hidden" name="form-name" value="contact">
+            <div class="section-label" style="margin-bottom:28px;">Drop Me a Message</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="off" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="off" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">What's it about?</label>
+              <input type="text" id="subject" name="subject" placeholder="Collaboration / Feedback / Just saying hi" required />
+            </div>
+
+            <div class="form-group" style="position:relative;">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="What's on your mind? I'm happy to chat about anything." required maxlength="1000"></textarea>
+              <div class="char-counter" id="charCounter">0 / 1000</div>
+            </div>
+
+            <input type="text" name="_honeypot" style="display:none;" tabindex="-1" autocomplete="off" />
+
+            <button type="submit" class="btn-submit">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+
+            <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--white-30);text-align:center;margin-top:20px;letter-spacing:0.06em;">
+              No spam. Your info stays private.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">SM</div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 SHAIK MUZAMMIL. Built while still learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <div class="page-transition-overlay"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    const msgField = document.getElementById('message');
+    const counter = document.getElementById('charCounter');
+    if (msgField && counter) {
+      msgField.addEventListener('input', () => {
+        const len = msgField.value.length;
+        counter.textContent = `${len} / 1000`;
+        counter.style.color = len > 900 ? 'var(--gold)' : 'var(--white-30)';
+      });
+    }
+
+    const form = document.getElementById('contactForm');
+    const successBlock = document.getElementById('formSuccess');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('.btn-submit');
+        btn.innerHTML = '<span>Sending…</span>';
+        btn.disabled = true;
+
+        try {
+          const response = await fetch('https://formspree.io/f/xojygbdr', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.style.display = 'none';
+            successBlock.classList.add('show');
+          } else {
+            const data = await response.json();
+            const errMsg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
+            btn.innerHTML = '<span>Send Message</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            btn.disabled = false;
+            alert(errMsg);
+          }
+        } catch (err) {
+          btn.innerHTML = '<span>Send Message</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          btn.disabled = false;
+          alert('Network error. Please check your connection and try again.');
+        }
+      });
+    }
+
+    function resetForm() {
+      if (form && successBlock) {
+        form.reset();
+        form.style.display = '';
+        successBlock.classList.remove('show');
+        const btn = form.querySelector('.btn-submit');
+        btn.innerHTML = '<span>Send Message</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        btn.disabled = false;
+        if (counter) counter.textContent = '0 / 1000';
+      }
+    }
+  </script>
+</body>
+</html>
