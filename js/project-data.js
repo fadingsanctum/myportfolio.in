@@ -285,6 +285,41 @@ const PROJECTS = [
       { src: "images/solo v21.png", label: "Main System UI" },
       { src: "images/solo v22.png", label: "The Dungeon Phase" }
     ]
+  },
+  {
+    id: "breathing-styles",
+    title: "Hinokami Requiem",
+    tagline: "Demon Slayer–inspired gesture combat with 13 breathing styles and particle physics.",
+    category: "Creative",
+    year: "2026",
+    status: "Live",
+    gradient: "linear-gradient(135deg,#0a0510,#1a0520,#0d0815)",
+    accentColor: "#E8C97A",
+    tags: ["Vanilla JavaScript", "Canvas 2D", "Web Audio API", "Gesture Input"],
+    liveUrl: "#",
+    githubUrl: "https://fadingsanctum.github.io/breathing-styles/",
+    netlifyUrl: "https:// my net",
+    overview: "Breathing Style Combat is an immersive, Demon Slayer–inspired interactive experience built entirely with vanilla JavaScript and Canvas 2D. It features 13 fully realised breathing styles — each with unique particle systems, trail geometry, charged effects, and sound design — all driven by gesture-based combat input. Swipe to slash, hold to charge, long-press to switch style.",
+    challenge: "Implementing 13 visually distinct combat styles inside a single Canvas 2D render pipeline without any framework. Each style needed its own particle shapes, trail algorithms, and charged-state effects — all running at 60fps while a gesture detection engine and Web Audio API ran concurrently. Keeping all that state clean and non-leaking across style switches was the hardest part.",
+    solution: "Built a modular style system where each breathing style is a self-contained ES module exporting its own drawTrail, chargedEffect, and spawnParticles functions. A central ParticleEngine and CombatSystem orchestrate everything, while a seeded deterministic RNG ensures visual effects are stable across animation frames. The Web Audio engine lazy-loads per style and handles charge/release audio without race conditions.",
+    features: [
+      "13 breathing styles: Water, Flame, Thunder, Wind, Stone, Sun, Moon, Mist, Serpent, Sound, Insect, Beast, Love",
+      "Gesture-based combat — swipe to slash, hold to charge, long-press to switch style",
+      "Per-style particle physics with 7 unique particle shapes",
+      "Charged slash effects with full-screen radial bursts and ground crack geometry",
+      "Combo detection system with 5 named combo patterns",
+      "Web Audio API engine with per-style charge and release sounds",
+      "SVG breathing style tree for in-combat style switching",
+      "Canvas 2D render pipeline running at 60fps with no framework"
+    ],
+    mockColors: ["#0a0510", "#1a0520", "#E8C97A", "#00BFFF"],
+    svgIcon: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none"><path d="M40 10 L70 65 L10 65 Z" stroke="#E8C97A" stroke-width="1.5" stroke-linejoin="round"/><path d="M20 55 Q40 20 60 55" stroke="#00BFFF" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="40" cy="40" r="6" fill="#E8C97A" opacity="0.4"/></svg>`,
+    images: [
+      { src: "images/hino.png", label: "Home Screen" },
+      { src: "images/styles.png", label: "Breathing Styles" },
+      { src: "images/user exp.png", label: "User Experience" }
+
+]
   }
 ];
 
