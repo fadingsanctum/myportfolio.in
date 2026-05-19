@@ -72,7 +72,7 @@ const PROJECTS = [
   },
   {
     id: "soul-library",
-    title: "SOUL LIBRARY v1.0",
+    title: "PEACE SIMULATOR v1.0",
     tagline: "Basic digital library and manga reading platform.",
     category: "Web App",
     year: "2025",
@@ -81,24 +81,23 @@ const PROJECTS = [
     accentColor: "#4ADE80",
     tags: ["HTML", "CSS", "JavaScript"],
     liveUrl: "#",
-    githubUrl: null,
-    netlifyUrl: "https://soullibrary-app.netlify.app/",
-    overview: "SOUL LIBRARY v1.0 is a digital library and manga reading platform featuring a classic catalog interface and adaptive synchronization. It was my first serious attempt at building something that felt like a real product — a clean, browsable platform where the focus stays entirely on the content.",
-    challenge: "Getting catalog browsing, page navigation, and a clean reading layout to all work together cohesively without any framework required careful planning of the DOM structure and state management from scratch.",
-    solution: "I kept the architecture simple and intentional: a catalog page, a reader view, and smooth transitions between them. Adaptive synchronization keeps the reader in sync with your last position. Every design decision was made to minimize distraction and keep the reading experience front and center.",
+    netlifyUrl: "https://fadingsanctum.github.io/peacesim.v1/",
+    overview: "Peace Life is a sophisticated digital sanctuary that fuses high-fidelity ambient visual worlds with a feature-rich, personalized music ecosystem designed for emotional resonance. Users cycle through 8 hand-crafted environments — from forest rain to deep ocean — each paired with a curated generative soundscape that responds to time of day and mood.",
+    challenge: "Sound and visuals are easy to combine badly. The challenge was making each environment feel like a genuine emotional space — not a stock video loop with lo-fi beats dropped on top — but a fully cohesive world that users would actually return to when they need focus, sleep, or calm.",
+    solution: "Designed a visual language system where each environment has a distinct color story, motion vocabulary, and audio texture. The generative soundscapes are built from layered stems that respond to time of day and user mood input, so no two sessions sound exactly the same.",
     features: [
-      "Classic library catalog browsing interface",
-      "Manga and book reader view with page navigation",
-      "Adaptive reading position synchronization",
-      "Clean, distraction-free reading layout",
-      "Built with pure HTML, CSS, and JavaScript"
+      "8 hand-crafted ambient visual environments",
+      "Generative soundscape engine per environment",
+      "Time-of-day adaptive lighting transitions",
+      "Mood-based session personalization",
+      "Focus, sleep, and meditate modes"
     ],
     mockColors: ["#0a1a0e", "#1a3a1e", "#4ADE80", "#E8C97A"],
     svgIcon: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none"><path d="M14 62L32 18l14 28 10-14 18 30H14Z" stroke="#4ADE80" stroke-width="1.5" stroke-linejoin="round"/><circle cx="58" cy="22" r="7" stroke="#4ADE80" stroke-width="1.5"/></svg>`,
     images: [
       { src: "images/library v1.png", label: "The Home Page" },
-      { src: "images/library v11.png", label: "The Chapter List" },
-      { src: "images/library v12.png", label: "The Reading Experience" }
+      { src: "images/library v11.png", label: "The video viewer" },
+      { src: "images/library v12.png", label: "The music world" }
     ]
   },
   {
@@ -134,7 +133,7 @@ const PROJECTS = [
   },
   {
     id: "soul-dash",
-    title: "SOUL LIBRARY v2.0",
+    title: "SOUL LIBRARY v1.0",
     tagline: "Professional digital library and e-reading platform.",
     category: "Web App",
     year: "2026",
@@ -165,7 +164,7 @@ const PROJECTS = [
   },
   {
     id: "peace-simulator",
-    title: "PEACE SIMULATOR v1.0",
+    title: "PEACE SIMULATOR v2.0",
     tagline: "Digital sanctuary fusing ambient worlds with a music ecosystem.",
     category: "Web App",
     year: "2026",
@@ -298,7 +297,7 @@ const PROJECTS = [
     tags: ["Vanilla JavaScript", "Canvas 2D", "Web Audio API", "Gesture Input"],
     liveUrl: "#",
     githubUrl: "https://fadingsanctum.github.io/hinokamirequiem.in/",
-    netlifyUrl: "https://fadingsanctum.github.io/hinokamirequiem.in/",
+    netlifyUrl: "https://hinokamirequiem-in.netlify.app/",
     overview: "Breathing Style Combat is an immersive, Demon Slayer–inspired interactive experience built entirely with vanilla JavaScript and Canvas 2D. It features 13 fully realised breathing styles — each with unique particle systems, trail geometry, charged effects, and sound design — all driven by gesture-based combat input. Swipe to slash, hold to charge, long-press to switch style.",
     challenge: "Implementing 13 visually distinct combat styles inside a single Canvas 2D render pipeline without any framework. Each style needed its own particle shapes, trail algorithms, and charged-state effects — all running at 60fps while a gesture detection engine and Web Audio API ran concurrently. Keeping all that state clean and non-leaking across style switches was the hardest part.",
     solution: "Built a modular style system where each breathing style is a self-contained ES module exporting its own drawTrail, chargedEffect, and spawnParticles functions. A central ParticleEngine and CombatSystem orchestrate everything, while a seeded deterministic RNG ensures visual effects are stable across animation frames. The Web Audio engine lazy-loads per style and handles charge/release audio without race conditions.",
